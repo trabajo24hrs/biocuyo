@@ -95,28 +95,28 @@ function initNavigation() {
    ========================================================================== */
 const TRANSLATIONS = {
   es: {
-    hero_eyebrow: "Valle de Uco, Mendoza • Argentina",
+    hero_eyebrow: "Valle de Uco, Mendoza &bull; Argentina",
     hero_headline: "Del Valle de Uco a los Principales Puertos del Mundo",
-    hero_lead: "Exportamos más de <strong>5.000.000 kg de ajo fresco premium al año</strong>. Trazabilidad integral de origen, empaque con atmósfera controlada y logística internacional directa.",
+    hero_lead: "Exportamos m&aacute;s de <strong>5.000.000 kg de ajo fresco premium al a&ntilde;o</strong>. Trazabilidad integral de origen, empaque con atm&oacute;sfera controlada y log&iacute;stica internacional directa.",
     btn_quote: "Cotizar Cosecha FOB / CIF",
-    btn_specsheet: "Ver Ficha Logística",
-    stat_kg: "Kg Ajo Exportado / Año",
-    stat_ha: "Hectáreas Propias",
-    stat_years: "Años de Trayectoria",
+    btn_specsheet: "Ver Ficha Log&iacute;stica",
+    stat_kg: "Kg Ajo Exportado / A&ntilde;o",
+    stat_ha: "Hect&aacute;reas Propias",
+    stat_years: "A&ntilde;os de Trayectoria",
     stat_virus: "Semilla Libre de Virus",
-    synergy_badge: "Integración Vertical Agroindustrial",
-    synergy_title: "Finca Propia (Agropettina) + Exportación Directa (BioCuyo)",
-    synergy_desc: "Sin intermediarios. Nuestra firma hermana Agropettina S.A.S. produce en los suelos del Valle de Uco bajo estándares meristemáticos propios, y BioCuyo Exportaciones S.A.S. despacha a los mercados más exigentes de Brasil, Europa y Norteamérica.",
+    synergy_badge: "Integraci&oacute;n Vertical Agroindustrial",
+    synergy_title: "Finca Propia (Agropettina) + Exportaci&oacute;n Directa (BioCuyo)",
+    synergy_desc: "Sin intermediarios. Nuestra firma hermana Agropettina S.A.S. produce en los suelos del Valle de Uco bajo est&aacute;ndares meristem&aacute;ticos propios, y BioCuyo Exportaciones S.A.S. despacha a los mercados m&aacute;s exigentes de Brasil, Europa y Norteam&eacute;rica.",
     synergy_btn: "Visitar Web de Agropettina",
     portfolio_pre: "Oferta Exportable 2026",
-    portfolio_title: "Variedades de Ajo para Exportación",
+    portfolio_title: "Variedades de Ajo para Exportaci&oacute;n",
     portfolio_sub: "Acondicionado, clasificado y calibrado bajo normas internacionales de inocuidad y empaque exportador.",
     calc_title: "Calculador y Cotizador de Embarque B2B",
-    calc_sub: "Estime capacidad en Contenedores Reefer de 40ft, cajas de 10kg y solicite cotización formal CIF / FOB al departamento de Comex.",
-    calc_calc_btn: "Solicitar Cotización Formal por WhatsApp Comex"
+    calc_sub: "Estime capacidad en Contenedores Reefer de 40ft, cajas de 10kg y solicite cotizaci&oacute;n formal CIF / FOB al departamento de Comex.",
+    calc_calc_btn: "Solicitar Cotizaci&oacute;n Formal por WhatsApp Comex"
   },
   en: {
-    hero_eyebrow: "Uco Valley, Mendoza • Argentina",
+    hero_eyebrow: "Uco Valley, Mendoza &bull; Argentina",
     hero_headline: "From the Uco Valley to the World's Major Ports",
     hero_lead: "We export over <strong>5,000,000 kg of premium fresh garlic per year</strong>. Full single-origin traceability, controlled atmosphere cold storage, and direct international logistics.",
     btn_quote: "Request FOB / CIF Quotation",
@@ -137,25 +137,25 @@ const TRANSLATIONS = {
     calc_calc_btn: "Request Official Quotation via Comex WhatsApp"
   },
   pt: {
-    hero_eyebrow: "Valle de Uco, Mendoza • Argentina",
+    hero_eyebrow: "Valle de Uco, Mendoza &bull; Argentina",
     hero_headline: "Do Valle de Uco para os Principais Portos do Mundo",
-    hero_lead: "Exportamos mais de <strong>5.000.000 kg de alho fresco premium por ano</strong>. Rastreabilidade total de origem, cadeia de frio rigorosa e logística internacional direta para o Brasil.",
+    hero_lead: "Exportamos mais de <strong>5.000.000 kg de alho fresco premium por ano</strong>. Rastreabilidade total de origem, cadeia de frio rigorosa e log&iacute;stica internacional direta para o Brasil.",
     btn_quote: "Cotar Alho FOB / CIF / DAP",
-    btn_specsheet: "Ver Ficha Logística",
+    btn_specsheet: "Ver Ficha Log&iacute;stica",
     stat_kg: "Kg de Alho Exportado / Ano",
-    stat_ha: "Hectares de Cultivo Próprio",
-    stat_years: "Anos de Tradição",
-    stat_virus: "Semente Livre de Vírus",
-    synergy_badge: "Integração Vertical Agroindustrial",
-    synergy_title: "Produção Própria (Agropettina) + Exportação Direta (BioCuyo)",
-    synergy_desc: "Sem intermediários. Nossa empresa irmã Agropettina S.A.S. cultiva nas terras do Valle de Uco, e a BioCuyo Exportaciones S.A.S. realiza a expedição direta para as principais redes e atacadistas do Brasil.",
+    stat_ha: "Hectares de Cultivo Pr&oacute;prio",
+    stat_years: "Anos de Tradi&ccedil;&atilde;o",
+    stat_virus: "Semente Livre de V&iacute;rus",
+    synergy_badge: "Integra&ccedil;&atilde;o Vertical Agroindustrial",
+    synergy_title: "Produ&ccedil;&atilde;o Pr&oacute;pria (Agropettina) + Exporta&ccedil;&atilde;o Direta (BioCuyo)",
+    synergy_desc: "Sem intermedi&aacute;rios. Nossa empresa irm&atilde; Agropettina S.A.S. cultiva nas terras do Valle de Uco, e a BioCuyo Exportaciones S.A.S. realiza a expedi&ccedil;&atilde;o direta para as principais redes e atacadistas do Brasil.",
     synergy_btn: "Conhecer a Agropettina",
-    portfolio_pre: "Oferta Exportável 2026",
-    portfolio_title: "Variedades de Alho para Exportação",
-    portfolio_sub: "Alho roxo e branco selecionado, calibrado e embalado nos padrões exigidos pelo mercado brasileiro e internacional.",
-    calc_title: "Simulador de Cargas e Cotação B2B",
-    calc_sub: "Estime a capacidade em Contêineres Reefer de 40ft e solicite cotação formal CIF / FOB / DAP para nosso setor de Comex.",
-    calc_calc_btn: "Solicitar Cotação Formal via WhatsApp Comex"
+    portfolio_pre: "Oferta Export&aacute;vel 2026",
+    portfolio_title: "Variedades de Alho para Exporta&ccedil;&atilde;o",
+    portfolio_sub: "Alho roxo e branco selecionado, calibrado e embalado nos padr&otilde;es exigidos pelo mercado brasileiro e internacional.",
+    calc_title: "Simulador de Cargas e Cota&ccedil;&atilde;o B2B",
+    calc_sub: "Estime a capacidade em Cont&ecirc;ineres Reefer de 40ft e solicite cota&ccedil;&atilde;o formal CIF / FOB / DAP para nosso setor de Comex.",
+    calc_calc_btn: "Solicitar Cota&ccedil;&atilde;o Formal via WhatsApp Comex"
   }
 };
 
@@ -246,10 +246,10 @@ function initComexCalculator() {
 }
 
 /* ==========================================================================
-   5. STATS COUNTER ANIMATION
+   5. STATS COUNTER ANIMATION (Safe textContent replacement)
    ========================================================================== */
 function initCounters() {
-  const counters = document.querySelectorAll('.metric-number[data-target]');
+  const counters = document.querySelectorAll('.counter[data-target]');
   if (!counters.length) return;
 
   const observer = new IntersectionObserver((entries, obs) => {
@@ -258,7 +258,6 @@ function initCounters() {
         const el = entry.target;
         const target = parseFloat(el.getAttribute('data-target'));
         const prefix = el.getAttribute('data-prefix') || '';
-        const suffix = el.getAttribute('data-suffix') || '';
         let start = 0;
         const duration = 1800;
         const stepTime = 25;
@@ -268,11 +267,11 @@ function initCounters() {
         const timer = setInterval(() => {
           start += increment;
           if (start >= target) {
-            el.innerHTML = `${prefix}${target.toLocaleString()}<span class="metric-unit">${suffix}</span>`;
+            el.textContent = `${prefix}${target.toLocaleString()}`;
             clearInterval(timer);
           } else {
             const displayVal = Math.floor(start);
-            el.innerHTML = `${prefix}${displayVal.toLocaleString()}<span class="metric-unit">${suffix}</span>`;
+            el.textContent = `${prefix}${displayVal.toLocaleString()}`;
           }
         }, stepTime);
 
