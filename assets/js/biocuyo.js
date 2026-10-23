@@ -104,8 +104,9 @@ const FULL_TRANSLATIONS = {
     nav_facilities: "Plantas &amp; Fr&iacute;o",
     nav_quote: "Cotizador",
     nav_contact: "Contacto",
-    nav_cta: "Cotizar FCL",
     drawer_agro_link: "Ir a Finca Agropettina &rarr;",
+    drawer_lang_label: "Idioma:",
+    drawer_whatsapp: "WhatsApp Comex",
 
     // Hero Section
     hero_eyebrow: "Valle de Uco, Mendoza &bull; Argentina",
@@ -196,6 +197,7 @@ const FULL_TRANSLATIONS = {
     cal_legend_harvest: "Cosecha en Valle de Uco",
     cal_legend_peak: "Pico de Disponibilidad &amp; Embarque",
     cal_legend_export: "Despacho Programado en Fr&iacute;o",
+    cal_scroll_hint: "Desliza horizontalmente para ver todo el a&ntilde;o &rarr;",
 
     // Infrastructure Section
     fac_pre: "Respaldo Tecnol&oacute;gico",
@@ -260,7 +262,8 @@ const FULL_TRANSLATIONS = {
     footer_col_eco: "Ecosistema",
     footer_col_comex: "Contacto Comex",
     footer_rights: "&copy; 2026 <strong>BioCuyo Exportaciones S.A.S.</strong> &mdash; Todos los Derechos Reservados.",
-    footer_tech: "Desarrollado con Arquitectura Web Est&aacute;tica Ultrarr&aacute;pida y Cero Costo de Servidor."
+    footer_tech: "Desarrollado con Arquitectura Web Est&aacute;tica Ultrarr&aacute;pida y Cero Costo de Servidor.",
+    whatsapp_float: "Comex WhatsApp"
   },
 
   en: {
@@ -278,8 +281,9 @@ const FULL_TRANSLATIONS = {
     nav_facilities: "Facilities &amp; Cold Chain",
     nav_quote: "Estimator",
     nav_contact: "Contact",
-    nav_cta: "Quote FCL",
     drawer_agro_link: "Visit Agropettina Farmland &rarr;",
+    drawer_lang_label: "Language:",
+    drawer_whatsapp: "WhatsApp Comex",
 
     // Hero Section
     hero_eyebrow: "Uco Valley, Mendoza &bull; Argentina",
@@ -370,6 +374,7 @@ const FULL_TRANSLATIONS = {
     cal_legend_harvest: "Harvest in Uco Valley",
     cal_legend_peak: "Peak Supply &amp; Loading Window",
     cal_legend_export: "Scheduled Cold-Storage Shipments",
+    cal_scroll_hint: "Swipe horizontally to view full year &rarr;",
 
     // Infrastructure Section
     fac_pre: "Biotechnology &amp; Infrastructure",
@@ -434,7 +439,8 @@ const FULL_TRANSLATIONS = {
     footer_col_eco: "Ecosystem",
     footer_col_comex: "Export Contact",
     footer_rights: "&copy; 2026 <strong>BioCuyo Exportaciones S.A.S.</strong> &mdash; All Rights Reserved.",
-    footer_tech: "Built with High-Performance Jamstack Architecture & Zero Server Hosting Cost."
+    footer_tech: "Built with High-Performance Jamstack Architecture & Zero Server Hosting Cost.",
+    whatsapp_float: "Comex WhatsApp"
   },
 
   pt: {
@@ -452,8 +458,9 @@ const FULL_TRANSLATIONS = {
     nav_facilities: "Instala&ccedil;&otilde;es &amp; Frio",
     nav_quote: "Cotador",
     nav_contact: "Contato",
-    nav_cta: "Cotar FCL",
     drawer_agro_link: "Conhecer Finca Agropettina &rarr;",
+    drawer_lang_label: "Idioma:",
+    drawer_whatsapp: "WhatsApp Comex",
 
     // Hero Section
     hero_eyebrow: "Valle de Uco, Mendoza &bull; Argentina",
@@ -544,6 +551,7 @@ const FULL_TRANSLATIONS = {
     cal_legend_harvest: "Colheita no Valle de Uco",
     cal_legend_peak: "Pico de Safra &amp; Embarque",
     cal_legend_export: "Despacho Programado em Frio",
+    cal_scroll_hint: "Deslize horizontalmente para ver o ano completo &rarr;",
 
     // Infrastructure Section
     fac_pre: "Suporte Tecnol&oacute;gico",
@@ -608,7 +616,8 @@ const FULL_TRANSLATIONS = {
     footer_col_eco: "Ecossistema",
     footer_col_comex: "Contato Comex",
     footer_rights: "&copy; 2026 <strong>BioCuyo Exportaciones S.A.S.</strong> &mdash; Todos os Direitos Reservados.",
-    footer_tech: "Desenvolvido com Arquitetura Web Est&aacute;tica Ultrarr&aacute;pida e Custo Zero de Servidor."
+    footer_tech: "Desenvolvido com Arquitetura Web Est&aacute;tica Ultrarr&aacute;pida e Custo Zero de Servidor.",
+    whatsapp_float: "WhatsApp Comex"
   }
 };
 

@@ -94,6 +94,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -104,6 +105,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  width: 100%;
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
@@ -462,6 +464,7 @@ button {
   border-radius: var(--radius-md);
   transition: all var(--transition-smooth);
   white-space: nowrap;
+  max-width: 100%;
 }
 
 .btn-primary {
@@ -1416,98 +1419,118 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   16. Responsive Media Queries (Drawer triggers at 1140px to prevent wrap)
+   16. Additional UI Components: Contact Grid, Calendar Hint & Mobile Floating
    -------------------------------------------------------------------------- */
-@media (max-width: 1140px) {
-  .nav-menu {
-    display: none;
-  }
-  .mobile-toggle {
-    display: flex;
-  }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
 }
 
-@media (max-width: 1024px) {
-  .hero-metrics-bar {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .varieties-grid,
-  .facilities-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .logistics-grid {
-    grid-template-columns: 1fr;
-  }
-  .founder-quote-wrap {
-    grid-template-columns: 1fr;
-  }
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .quotation-form-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.contact-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
 }
 
-@media (max-width: 768px) {
-  .hero-metrics-bar {
-    grid-template-columns: 1fr;
-    padding: 1.25rem;
-  }
-  .metric-card {
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 1rem;
-  }
-  .metric-card:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  .varieties-grid,
-  .facilities-grid {
-    grid-template-columns: 1fr;
-  }
-  .synergy-card {
-    grid-template-columns: 1fr;
-    padding: 1.75rem;
-  }
-  .synergy-action {
-    align-items: flex-start;
-  }
-  .quotation-form-grid {
-    grid-template-columns: 1fr;
-  }
-  .form-group.span-2 {
-    grid-column: span 1;
-  }
-  .quotation-card {
-    padding: 1.75rem;
-  }
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .top-bar-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.contact-card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
 }
 
-/* Mobile Navigation Overlay */
+.contact-form-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn-submit-contact {
+  width: 100%;
+}
+
+/* Calendar Matrix Swipe Hint */
+.calendar-scroll-hint {
+  display: none;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--brand-emerald-600);
+  margin-bottom: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+[data-theme="dark"] .calendar-scroll-hint {
+  color: var(--brand-emerald-500);
+}
+
+.calendar-scroll-hint svg {
+  animation: swipeArrow 1.5s infinite ease-in-out;
+}
+
+@keyframes swipeArrow {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+/* Floating Mobile WhatsApp Quick Contact */
+.mobile-float-whatsapp {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  transition: all var(--transition-normal);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+.mobile-float-whatsapp:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.55);
+  color: #ffffff;
+}
+
+.mobile-float-whatsapp svg {
+  flex-shrink: 0;
+}
+
+/* Mobile Drawer UI */
 .mobile-nav-drawer {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 82%;
-  max-width: 380px;
+  width: 85%;
+  max-width: 360px;
   height: 100vh;
+  height: 100dvh;
+  max-height: 100vh;
   background: var(--bg-card);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   z-index: 200;
   box-shadow: var(--shadow-xl);
-  padding: 2.5rem 1.75rem;
+  padding: 2rem 1.5rem 3rem;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1519,25 +1542,93 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.drawer-brand {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--text-main);
 }
 
 .drawer-close-btn {
-  font-size: 1.75rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  line-height: 1;
   color: var(--text-main);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.drawer-close-btn:hover {
+  background: var(--bg-secondary);
+}
+
+.drawer-lang-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 0.85rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+}
+
+.drawer-lang-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
 }
 
 .drawer-links {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.1rem;
   list-style: none;
+  margin-bottom: 1rem;
 }
 
 .drawer-links a {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-main);
+  display: block;
+  padding: 0.25rem 0;
+  transition: color var(--transition-fast);
+}
+
+.drawer-links a:hover {
+  color: var(--brand-emerald-500);
+}
+
+.drawer-agro-item {
+  margin-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+}
+
+.drawer-agro-link {
+  color: var(--brand-emerald-600) !important;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .drawer-agro-link {
+  color: var(--brand-emerald-500) !important;
+}
+
+.drawer-footer-cta {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.drawer-whatsapp-btn {
+  width: 100%;
 }
 
 .drawer-backdrop {
@@ -1546,8 +1637,9 @@ button {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   z-index: 199;
   opacity: 0;
   pointer-events: none;
@@ -1557,4 +1649,594 @@ button {
 .drawer-backdrop.active {
   opacity: 1;
   pointer-events: auto;
+}
+
+/* --------------------------------------------------------------------------
+   17. Multi-Tiered Responsive Media Queries
+   -------------------------------------------------------------------------- */
+
+/* Breakpoint 1: 1140px — Mobile Toggle & Menu Switch */
+@media (max-width: 1140px) {
+  .nav-menu {
+    display: none;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
+}
+
+/* Breakpoint 2: 1024px — Medium Tablet Adjustments */
+@media (max-width: 1024px) {
+  .hero-metrics-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .varieties-grid,
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .logistics-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .founder-quote-wrap {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .founder-img {
+    height: 380px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .quotation-form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Breakpoint 3: 768px — Tablet Portrait & Large Phones */
+@media (max-width: 768px) {
+  /* Layout & Spacing */
+  .section-padding {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .section-title-wrap {
+    margin-bottom: 2.25rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.65rem, 5.2vw, 2.35rem);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+
+  .container {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+  }
+
+  /* Top Ecosystem Bar */
+  .top-ecosystem-bar {
+    padding: 0.45rem 0;
+  }
+
+  .top-bar-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .ecosystem-label {
+    display: none;
+  }
+
+  .ecosystem-brand-links {
+    gap: 0.4rem;
+  }
+
+  .ecosystem-brand-link {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.72rem;
+  }
+
+  .ecosystem-brand-link span {
+    font-size: 0.72rem;
+  }
+
+  /* Header & Navigation */
+  .site-header {
+    height: 4.25rem;
+  }
+
+  .nav-wrapper {
+    height: 4.25rem;
+    gap: 0.6rem;
+  }
+
+  .brand-logo-img {
+    height: 38px;
+  }
+
+  .brand-tagline-sub {
+    font-size: 0.62rem;
+  }
+
+  /* Buttons */
+  .btn {
+    white-space: normal;
+    text-align: center;
+    max-width: 100%;
+    line-height: 1.35;
+  }
+
+  /* Hero Section */
+  .hero-comex {
+    min-height: auto;
+    padding: 3.5rem 0 3rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.85rem, 6.2vw, 2.75rem);
+    line-height: 1.16;
+    margin-bottom: 1.15rem;
+  }
+
+  .hero-lead {
+    font-size: 1.02rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.85rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.94rem;
+  }
+
+  /* Hero Metrics: 2x2 Grid instead of long vertical stack */
+  .hero-metrics-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .metric-card {
+    border-right: none;
+    border-bottom: none;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem 0.75rem;
+    text-align: left;
+  }
+
+  .metric-number {
+    font-size: 1.65rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .metric-label {
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+
+  /* Strategic Synergy Banner */
+  .ecosystem-synergy-banner {
+    padding: 2.25rem 0;
+  }
+
+  .synergy-card {
+    grid-template-columns: 1fr;
+    padding: 1.6rem 1.25rem;
+    gap: 1.5rem;
+    border-radius: var(--radius-md);
+  }
+
+  .synergy-title {
+    font-size: 1.3rem;
+  }
+
+  .synergy-desc {
+    font-size: 0.92rem;
+  }
+
+  .synergy-action {
+    align-items: stretch;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .synergy-partners {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .partner-pill {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .synergy-action .btn {
+    width: 100%;
+  }
+
+  /* Garlic Varieties */
+  .varieties-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .variety-image-box {
+    height: 220px;
+  }
+
+  .variety-body {
+    padding: 1.4rem 1.25rem;
+  }
+
+  .variety-name {
+    font-size: 1.3rem;
+  }
+
+  .variety-summary {
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+  }
+
+  .variety-specs-table td {
+    padding: 0.45rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .variety-body .btn {
+    width: 100%;
+  }
+
+  /* Logistics & Reefer */
+  .logistics-grid {
+    gap: 2rem;
+  }
+
+  .logistics-item {
+    padding: 1.15rem 1rem;
+    gap: 0.85rem;
+  }
+
+  .logistics-icon-box {
+    width: 42px;
+    height: 42px;
+  }
+
+  .logistics-item-title {
+    font-size: 1.02rem;
+  }
+
+  .logistics-item-desc {
+    font-size: 0.86rem;
+  }
+
+  .logistics-specs-card {
+    padding: 1.6rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .specs-card-title {
+    font-size: 1.3rem;
+  }
+
+  .specs-card-subtitle {
+    font-size: 0.82rem;
+  }
+
+  .reefer-specs-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+    padding: 0.65rem 0;
+  }
+
+  .reefer-specs-row .spec-name {
+    font-size: 0.82rem;
+  }
+
+  .reefer-specs-row .spec-val {
+    font-size: 0.96rem;
+  }
+
+  .incoterms-pills-row {
+    gap: 0.45rem;
+    margin-top: 1.35rem;
+  }
+
+  .incoterm-badge {
+    padding: 0.3rem 0.65rem;
+    font-size: 0.74rem;
+  }
+
+  /* Calendar Matrix & Table */
+  .calendar-matrix-wrapper {
+    padding: 1.25rem 0.85rem;
+    border-radius: var(--radius-md);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .calendar-scroll-hint {
+    display: flex;
+  }
+
+  .calendar-table th,
+  .calendar-table td {
+    padding: 0.7rem 0.35rem;
+    font-size: 0.75rem;
+  }
+
+  .calendar-table th.var-col {
+    min-width: 140px;
+  }
+
+  .calendar-legend {
+    gap: 0.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1.25rem;
+    font-size: 0.82rem;
+  }
+
+  /* Infrastructure Facilities */
+  .facilities-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .facility-img-wrap {
+    height: 200px;
+  }
+
+  .facility-content {
+    padding: 1.4rem 1.25rem;
+  }
+
+  .facility-name {
+    font-size: 1.2rem;
+  }
+
+  .facility-desc {
+    font-size: 0.88rem;
+  }
+
+  /* Founder Legacy Quote */
+  .founder-quote-section {
+    padding: 3.5rem 0;
+  }
+
+  .founder-quote-wrap {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .founder-img {
+    height: 270px;
+    border-radius: var(--radius-md);
+  }
+
+  .quote-mark {
+    font-size: 3.5rem;
+    margin-bottom: -1rem;
+  }
+
+  .quote-statement {
+    font-size: 1.2rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+  }
+
+  .founder-author-name {
+    font-size: 1.15rem;
+  }
+
+  .founder-author-title {
+    font-size: 0.8rem;
+  }
+
+  /* B2B Quotation Engine */
+  .quotation-card {
+    padding: 1.6rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .quotation-form-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group.span-2 {
+    grid-column: span 1;
+  }
+
+  .form-label {
+    font-size: 0.84rem;
+  }
+
+  .form-control {
+    font-size: 16px; /* Prevents auto-zoom in mobile Safari */
+    padding: 0.75rem 0.85rem;
+  }
+
+  .quotation-output-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    padding: 1.15rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius-md);
+  }
+
+  .output-metric {
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .output-metric:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .output-metric-label {
+    font-size: 0.72rem;
+  }
+
+  .output-metric-val {
+    font-size: 1.35rem;
+  }
+
+  #calcQuoteBtn {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 0.88rem;
+    line-height: 1.35;
+  }
+
+  /* Contact Section */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-card {
+    padding: 1.6rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .contact-card-title {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .btn-submit-contact {
+    width: 100%;
+    padding: 0.85rem 1rem;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding-top: 3.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.65rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Breakpoint 4: 540px — Compact Smartphone Adjustments */
+@media (max-width: 540px) {
+  .site-header {
+    height: 4rem;
+  }
+
+  .nav-wrapper {
+    height: 4rem;
+  }
+
+  .brand-logo-img {
+    height: 34px;
+  }
+
+  .brand-tagline-text {
+    display: none;
+  }
+
+  .nav-cta-btn {
+    display: none;
+  }
+
+  .top-bar-inner {
+    padding: 0;
+  }
+
+  .top-ecosystem-bar .ecosystem-brand-link:nth-child(3) span {
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.75rem, 7.5vw, 2.25rem);
+  }
+
+  .mobile-float-whatsapp {
+    bottom: 1.2rem;
+    right: 1.2rem;
+    padding: 0.7rem 1.1rem;
+    font-size: 0.82rem;
+  }
+}
+
+/* Breakpoint 5: 380px — Ultra-compact Devices (iPhone SE, small screens) */
+@media (max-width: 380px) {
+  .container {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  .hero-metrics-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .synergy-partners {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .output-metric-val {
+    font-size: 1.2rem;
+  }
+
+  .mobile-float-whatsapp {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.75rem;
+    border-radius: 50%;
+  }
+
+  .mobile-float-whatsapp span {
+    display: none;
+  }
 }
